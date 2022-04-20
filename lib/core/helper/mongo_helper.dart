@@ -17,7 +17,7 @@ class MongoHelper {
 
   static MongoHelper get instance => _instance ??= MongoHelper._();
 
-  final appConstants = AppConstants();
+  final appConstants = AppConstants.instance;
   User? user;
 
   MongoHelper._() {
@@ -103,7 +103,7 @@ class MongoHelper {
 
   Future<List<Food>?> getFoods() async {
     if (db != null) {
-      final foodList = await getProduct(FoodConstants().collectionName);
+      final foodList = await getProduct(FoodConstants.instance.collectionName);
       if (foodList != null) {
         final foods = List<Food>.from(foodList.map((x) => Food().fromJson(x)));
         return foods;

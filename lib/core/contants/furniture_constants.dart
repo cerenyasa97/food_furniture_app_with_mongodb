@@ -2,6 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:food_furniture_app/core/contants/app_constants.dart';
 
 class FurnitureConstants extends AppConstants {
+  static FurnitureConstants? _instance;
+
+  static FurnitureConstants get instance => _instance ??= FurnitureConstants.init();
+
+  FurnitureConstants.init() : super.init();
+
   @override
   String get loginImagePath => 'assets/images/furniture.png';
 

@@ -17,7 +17,7 @@ class DetailBottomNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final greenColor = AppConstants().buttonColor;
+    final greenColor = AppConstants.instance.buttonColor;
     return Container(
       height: 200,
       color: Colors.white,

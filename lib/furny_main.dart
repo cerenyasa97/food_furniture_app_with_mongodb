@@ -6,7 +6,7 @@ void main() {
   final furnyConfig = FlavorConfig(
       applicationType: Application.furniture,
       appTitle: "Furny",
-      appConstants: FurnitureConstants());
+      appConstants: FurnitureConstants.instance);
 
   mainCommon(furnyConfig);
 }

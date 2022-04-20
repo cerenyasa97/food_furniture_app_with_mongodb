@@ -2,6 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:food_furniture_app/core/contants/app_constants.dart';
 
 class FoodConstants extends AppConstants{
+  static FoodConstants? _instance;
+
+  static FoodConstants get instance => _instance ??= FoodConstants.init();
+
+  FoodConstants.init() : super.init();
+
   String get collectionName => 'food';
   @override
   String get categories => 'food_categories';

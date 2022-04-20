@@ -21,14 +21,14 @@ void showAlertDialog(
         title: Text(
           title ?? "Alert Dialog title",
           style: GoogleFonts.quicksand(
-              color: AppConstants().buttonColor,
+              color: AppConstants.instance.buttonColor,
               fontSize: 24,
               fontWeight: FontWeight.bold),
         ),
         content: Text(
           content ?? "Alert Dialog body",
           style: GoogleFonts.quicksand(
-              color: AppConstants().buttonColor,
+              color: AppConstants.instance.buttonColor,
               fontSize: 20,
               fontWeight: FontWeight.w500),
         ),

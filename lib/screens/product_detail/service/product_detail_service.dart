@@ -17,7 +17,7 @@ class ProductDetailService {
   Future<List<Food>?>? getSimilarFoods(Product product) async {
     if (mongoHelper.db != null) {
       final collection =
-          mongoHelper.db!.collection(FoodConstants().collectionName);
+          mongoHelper.db!.collection(FoodConstants.instance.collectionName);
       final data = await collection
           .find(where.eq("type", product.type).limit(4))
           .toList();
@@ -33,7 +33,7 @@ class ProductDetailService {
       Furniture product, String selectedColor) async {
     if (mongoHelper.db != null) {
       final collection =
-          mongoHelper.db!.collection(FurnitureConstants().collectionName);
+          mongoHelper.db!.collection(FurnitureConstants.instance.collectionName);
       final data = await collection.findOne(
           where.eq("product_id", '${product.productBaseId}_$selectedColor'));
       return data != null ? Furniture().fromJson(data) : null;

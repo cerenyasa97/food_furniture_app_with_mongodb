@@ -33,7 +33,7 @@ class ProductCard extends StatelessWidget {
                   image: product.image != null
                       ? DecorationImage(image: AssetImage(product.image!))
                       : null),
-              child: product.image != null ? null : Lottie.asset(AppConstants().notFoundImages),
+              child: product.image != null ? null : Lottie.asset(AppConstants.instance.notFoundImages),
             ),
           ),
           Expanded(

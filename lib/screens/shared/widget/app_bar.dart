@@ -47,7 +47,7 @@ class ProductAppBar extends StatelessWidget {
                   onTap: onTap,
                   child: Container(
                     decoration: BoxDecoration(
-                        color: AppConstants().grey, shape: BoxShape.circle),
+                        color: AppConstants.instance.grey, shape: BoxShape.circle),
                     padding: const EdgeInsets.all(15),
                     child: Icon(icon),
                   ),

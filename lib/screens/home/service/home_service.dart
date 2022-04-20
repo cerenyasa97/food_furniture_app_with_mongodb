@@ -15,7 +15,7 @@ class HomeService {
     if (mongoHelper.db != null) {
       final collection = mongoHelper.db!.collection(col);
       final data = await collection.find(where.limit(5)).toList();
-      return data.map((element) => col == FoodConstants().collectionName
+      return data.map((element) => col == FoodConstants.instance.collectionName
                     ? Food().fromJson(element)
                     : Furniture().fromJson(element)).toList();
     }
@@ -25,7 +25,7 @@ class HomeService {
     if (mongoHelper.db != null) {
       final collection = mongoHelper.db!.collection(col);
       final data = await collection.find(where.eq("type", category)).toList();
-      return data.map((element) => col == FoodConstants().collectionName
+      return data.map((element) => col == FoodConstants.instance.collectionName
           ? Food().fromJson(element)
           : Furniture().fromJson(element)).toList();
     }
